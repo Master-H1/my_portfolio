@@ -14,13 +14,7 @@ from pathlib import Path
 import environ
 import os
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-
-
-
+env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -36,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # False if not in os.environ because of casting above
-DEBUG = env('DEBUG')
+DEBUG = env('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -137,6 +131,22 @@ STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 # MEDIA FILES
 MEDIA_URL = 'media/'
 MEDIA_ROOT = 'media'
+
+
+# https settings
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+# HSTS settings
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_REDIRECT_EXEMPT = []
+SECURE_HSTS_PRELOAD = True
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
