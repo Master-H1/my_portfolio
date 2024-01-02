@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="row row-cols-1 row-cols-lg-1 text-start mt-4">
+    <!-- Description no 1 -->
+    <h1 class="text-warning">Project: {{project.title}}</h1>
+    <div class="col w-100  mb-4">
+        <p class="card-text text-start text-white mt-3 mb-3">Developed using: <i
+                class="text-warning">{{project.technology_used}}</i>.</p>
+        <p>{{project.in_short}}</p>
+        <img src="{{project.photo.url}}" class="img-fluid rounded-start h-auto w-100" alt="...">
+    </div>
+
+    <!-- Description no 2 -->
+    {%if project.title1 != None and project.description1 != None and project.photo1 != '' %}
+    <div class="col mt-4 mb-4">
+        <h3 class="mt-3 text-center text-warning"># {{project.title1}}</h3>
+        <p>{{project.description1}}</p>
+        <img src="{{project.photo1.url}}" class="img-fluid rounded-start h-auto w-100" alt="...">
+    </div>
+    {%endif%}
+
+    <!-- Description no 3 -->
+    {%if project.title2 != None and project.description2 != None and project.photo2 != '' %}
+    <div class="col mt-4 mb-4">
+        <h3 class="mt-3 text-center text-warning"># {{project.title2}}</h3>
+        <p>{{project.description2}}</p>
+        <img src="{{project.photo2.url}}" class="img-fluid rounded-start h-auto w-100" alt="...">
+    </div>
+    {%endif%}
+
+    <!-- Description no 4 -->
+    {%if project.title3 != None and project.description3 != None and project.photo3 != '' %}
+    <div class="col mt-4 mb-4">
+        <h3 class="mt-3 text-center text-warning"># {{project.title3}}</h3>
+        <p>{{project.description3}}</p>
+        <img src="{{project.photo3.url}}" class="img-fluid rounded-start h-auto w-100" alt="...">
+    </div>
+    {%endif%}
+
+    <!-- Description 4 -->
+    {%if project.description3 != None %}
+    <div class="col mt-4 mb-4">
+        <div class="card">
+            <div class="card-title">
+                <h3 class="mt-3 text-center text-success">
+                    {{project.description4}}
+                    <img src="{%static 'images/attention.gif'%}" alt="" class="float-right" width="70" height="70">
+
+                </h3>
+            </div>
+        </div>
+    </div>
+    {%endif%}
+</div>
+{%endblock%}

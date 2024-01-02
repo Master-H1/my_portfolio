@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="container px-4 py-5 w-100" id="custom-cards">
+    <h2 class="pb-2 ">My Web Development Skills</h2>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-3 py-5">
+        <!-- ================ Front End -->
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('/static/images/unsplash-photo-3.jpg'); background-repeat:no-repeat; background-size:cover;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div class="d-flex gap-5 justify-content-center">
+                        <div
+                            class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px mb-4">
+                            <ul class="list-unstyled mb-0">
+                                {%for front in front_end%}
+                                <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                                        <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                                        {{front.name}}
+                                    </a></li>
+                                {%endfor%}
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="/static/images/unsplash-photo-2.jpg" alt="Bootstrap" width="32" height="32"
+                                class="rounded-circle border border-white">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#geo-fill" />
+                            </svg>
+                            <strong class="text-warning">Front-End Development</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ==============End of Front-End part -->
+
+        <!-- ================ Back End -->
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('/static/images/unsplash-photo-3.jpg'); background-repeat:no-repeat; background-size:cover;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <!-- Div -->
+                    <div class="d-flex gap-5 justify-content-center">
+                        <div
+                            class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px mb-4">
+                            <ul class="list-unstyled mb-0">
+                                {%for back in back_end%}
+                                <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                                        <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                                        {{back.name}}
+                                    </a></li>
+                                {%endfor%}
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="/static/images/unsplash-photo-2.jpg" alt="Bootstrap" width="32" height="32"
+                                class="rounded-circle border border-white">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#geo-fill" />
+                            </svg>
+                            <strong class="text-warning">Back-End Development</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ==============End of Back-End part -->
+
+        <!-- ================ Other skills -->
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                style="background-image: url('/static/images/unsplash-photo-3.jpg'); background-repeat:no-repeat; background-size:cover;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <!-- Div -->
+                    <div class="d-flex gap-5 justify-content-center">
+                        <div
+                            class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px mb-4">
+                            <ul class="list-unstyled mb-0">
+                                {%for other in others%}
+                                <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+                                        <span class="d-inline-block bg-success rounded-circle p-1"></span>
+                                        {{other.name}}
+                                    </a></li>
+                                {%endfor%}
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="me-auto">
+                            <img src="/static/images/unsplash-photo-2.jpg" alt="Bootstrap" width="32" height="32"
+                                class="rounded-circle border border-white">
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <svg class="bi me-2" width="1em" height="1em">
+                                <use xlink:href="#geo-fill" />
+                            </svg>
+                            <strong class="text-warning">Other Skills</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ==============End of Other skills part -->
+    </div>
+
+
+</div>
+
+{%endblock%}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="row">
+    <h1 class="mb-5 text-center">My Resume</h1>
+    <div class="col">
+        <a class="btn btn-lg btn-primary float-right" href="https://resume.creddle.io/resume/9j9786y6lp2"
+            target="_blank" role="button">View my Resume
+            &raquo;</a> <br>
+
+        {%for res in resume%}
+        <a class="btn btn-lg btn-primary mt-4" href="{%url 'download' res.id%}" role="button">Download my Resume <i
+                class="fa fa-download text-warning"></i></a>
+        {%endfor%}
+    </div>
+
+</div>
+
+{%endblock%}

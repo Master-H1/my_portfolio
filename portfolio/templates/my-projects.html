@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
+<h1 class="text-center mb-3">Projects</h1>
+
+<div class="card mb-4 w-100 bg-dark border-warning">
+    {%for project in projects%}
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{project.photo.url}}" class="img-fluid rounded-start h-100" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body text-start">
+                <h5 class="card-title text-start text-success">{{project.title}}</h5>
+                <p class="card-text text-start text-white">{{project.in_short}}</p>
+                <p class="card-text text-start text-white">Developed using: <i
+                        class="text-warning">{{project.technology_used}}</i></p>
+                <a class="btn btn-lg btn-primary float-left" href="{%url 'detail' project.id%}" role="button">View
+                    Details
+                    &raquo;</a>
+                <p class="card-text text-end text-white">Last Updated: <small
+                        class="text-warning">{{project.last_update}}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
